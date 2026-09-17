@@ -236,7 +236,30 @@
       "createdAt": "2026-09-16T23:39:16.864Z",
       "updatedAt": "2026-09-17T02:18:08.158Z",
       "__v": 0
-    }
+    },
+    {
+  "_id":  "6aac6b5d4c20de679511bf87",
+  "code": "013",
+  "name": "Antique Layered Tikka",
+  "category": "Maang Tikka",
+  "style": "Bridal",
+  "description": "Beautiful Antique Red and Green Stone antique Collection",
+  "pricePerDay": 5,
+  "deposit": 30,
+  "image": "/uploads/1789684561305-25259d1cfd58291a.webp",
+  "images": [
+    "/uploads/1789684561305-25259d1cfd58291a.webp",
+    "/uploads/1789684561337-2ddae608a94970bb.webp"
+  ],
+  "featured": true,
+  "premium": false,
+  "available": true,
+  "views": 2,
+  "likes": 0,
+  "createdAt": "2026-09-17T22:36:13.965Z",
+  "updatedAt": "2026-09-17T22:36:38.344Z",
+  "__v": 0
+}
   ],
   "enquiries": [],
   "rentals": [
