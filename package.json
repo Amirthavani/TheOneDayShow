@@ -1,0 +1,29 @@
+{
+  "name": "one-day-show",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "vite",
+    "dev:server": "node --watch server/index.js",
+    "start": "node server/index.js",
+    "build": "vite build",
+    "data:export": "node server/scripts/exportMongoToJson.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "multer": "^2.4.0",
+    "react": "^19.1.1",
+    "react-day-picker": "^10.0.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.2",
+    "concurrently": "^9.2.1",
+    "vite": "^7.1.4"
+  }
+}
