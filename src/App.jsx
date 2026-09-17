@@ -109,6 +109,7 @@ function Storefront() {
               Signature South Indian jewelry, thoughtfully curated for weddings,
               celebrations, and every unforgettable entrance.
             </p>
+            <p className="pickup-location">Fremont, California · Bay Area jewelry rental pickup by appointment only.</p>
             <div className="hero-actions">
               <a className="primary-button" href="#collection">Find your piece <span>→</span></a>
               <a className="text-link" href="#how-it-works">How renting works</a>

@@ -25,6 +25,7 @@ h1, h2 { font-family: "Playfair Display", serif; font-weight: 500; letter-spacin
 h1 { margin-bottom: 24px; font-size: clamp(52px, 6vw, 82px); line-height: .98; }
 h1 em, h2 em { color: #a84a32; }
 .hero-description { max-width: 410px; color: #625e55; line-height: 1.75; font-size: 15px; }
+.pickup-location { max-width: 410px; margin: 15px 0 0; color: #315147; font-size: 12px; font-weight: 600; line-height: 1.6; }
 .hero-actions { display: flex; align-items: center; gap: 25px; margin-top: 31px; }
 .primary-button { display: inline-flex; align-items: center; gap: 22px; padding: 15px 19px; font-size: 13px; transition: background .2s; }
 .primary-button:hover { background: #1f3e34; }
