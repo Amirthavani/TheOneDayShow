@@ -6,7 +6,8 @@ import Rental from "../models/Rental.js";
 import { seedJewelry } from "../seed.js";
 import * as jsonStore from "./jsonStore.js";
 
-const source = process.env.DATA_SOURCE || "mongodb";
+const source = process.env.DATA_SOURCE || "json";
+console.log("Amirthavani"+source)
 if (!["mongodb", "json"].includes(source)) {
   throw new Error("DATA_SOURCE must be either \"mongodb\" or \"json\".");
 }
