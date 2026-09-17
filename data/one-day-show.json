@@ -12,7 +12,7 @@
       "available": true,
       "__v": 0,
       "createdAt": "2026-09-15T02:31:26.210Z",
-      "updatedAt": "2026-09-17T02:47:19.981Z",
+      "updatedAt": "2026-09-17T03:48:41.142Z",
       "description": "A temple-inspired with a rich antique-gold finish for bridal ceremonies.\n\nA temple-inspired  rich antique-gold finish for bridal ceremonies.\n1 . Long Necklace\n2.  Short Necklace\n3. Hip Belt\n4. Maang tikka\n5. Armlets\n6. Bangle\n7. Hair Brooch",
       "images": [
         "/uploads/1789592400256-d0c93dee1d5da057.png",
@@ -26,7 +26,7 @@
         "/uploads/1789595232719-3957a1082dc8fcc9.webp"
       ],
       "premium": true,
-      "views": 28,
+      "views": 32,
       "code": "001",
       "likes": 0
     },
@@ -252,6 +252,20 @@
       "status": "confirmed",
       "createdAt": "2026-09-16T23:57:49.662Z",
       "updatedAt": "2026-09-16T23:57:49.662Z",
+      "__v": 0
+    },
+    {
+      "_id": "6aab55adf00c810d3e117881",
+      "jewelry": "6aa8adfe38cf98871bcbab2a",
+      "customerName": "Selva",
+      "email": "test@test.com",
+      "phone": "5702150818",
+      "eventDate": "2026-09-21T00:00:00.000Z",
+      "returnDate": "2026-09-24T00:00:00.000Z",
+      "total": 200,
+      "status": "confirmed",
+      "createdAt": "2026-09-17T02:51:25.431Z",
+      "updatedAt": "2026-09-17T02:53:30.148Z",
       "__v": 0
     }
   ]
