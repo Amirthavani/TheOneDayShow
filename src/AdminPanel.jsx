@@ -215,7 +215,7 @@ export default function AdminPanel() {
                 <form className="admin-form" onSubmit={saveItem}>
                   <label>Jewelry code<input required value={itemForm.code} onChange={(event) => setItemForm({ ...itemForm, code: event.target.value.toUpperCase() })} placeholder="001" /></label>
                   <label>Name<input required value={itemForm.name} onChange={(event) => setItemForm({ ...itemForm, name: event.target.value })} /></label>
-                  <label>Category<select value={itemForm.category} onChange={(event) => setItemForm({ ...itemForm, category: event.target.value })}><option>Necklaces</option><option>Chokers</option><option>Earrings</option><option>Waist Belts</option></select></label>
+                  <label>Category<select value={itemForm.category} onChange={(event) => setItemForm({ ...itemForm, category: event.target.value })}><option>Necklaces</option><option>Chokers</option><option>Earrings</option><option>Waist Belts</option><option>Maang Tikka</option></select></label>
                   <label>Style<select value={itemForm.style} onChange={(event) => setItemForm({ ...itemForm, style: event.target.value })}><option>Bridal</option><option>Party</option><option>Casual</option><option>Festival</option></select></label>
                   <label className="full-field">Description<textarea required value={itemForm.description} onChange={(event) => setItemForm({ ...itemForm, description: event.target.value })} placeholder="Describe the design, material, and ideal occasion." /></label>
                   <label>Daily rental (USD)<input required min="0" type="number" value={itemForm.pricePerDay} onChange={(event) => setItemForm({ ...itemForm, pricePerDay: event.target.value })} /></label>

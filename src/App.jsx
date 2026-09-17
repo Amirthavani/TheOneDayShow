@@ -5,7 +5,7 @@ import AdminPanel from "./AdminPanel.jsx";
 import { apiUrl } from "./api.js";
 import ProductPage from "./ProductPage.jsx";
 
-const categories = ["All", "Necklaces", "Chokers", "Earrings", "Waist Belts"];
+const categories = ["All", "Necklaces", "Chokers", "Earrings", "Waist Belts", "Maang Tikka"];
 const formatCurrency = (amount) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -115,7 +115,6 @@ function Storefront() {
               <a className="text-link" href="#how-it-works">How renting works</a>
             </div>
             <div className="hero-trust">
-              <span><strong>150+</strong> heirloom-inspired pieces</span>
               <span><strong>24 hr</strong> easy rental window</span>
             </div>
           </div>
