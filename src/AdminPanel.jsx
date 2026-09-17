@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { apiUrl } from "./api.js";
 
 const emptyItem = {
   code: "", name: "", category: "Necklaces", style: "Bridal", pricePerDay: "", deposit: "",
@@ -6,7 +7,7 @@ const emptyItem = {
 };
 
 async function adminRequest(path, options = {}) {
-  const response = await fetch(path, {
+  const response = await fetch(apiUrl(path), {
     ...options,
     credentials: "include",
     headers: {

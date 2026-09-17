@@ -11,6 +11,12 @@ import * as store from "./data/store.js";
 const app = express();
 const port = process.env.PORT || 5000;
 const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/One_day_show";
+const isProduction = process.env.NODE_ENV === "production";
+const allowedOrigins = [
+  process.env.CLIENT_ORIGIN,
+  "http://localhost:5173",
+  "http://localhost:5174"
+].filter(Boolean);
 const adminUsername = process.env.ADMIN_USERNAME;
 const adminPassword = process.env.ADMIN_PASSWORD;
 const sessionDuration = 8 * 60 * 60 * 1000;
@@ -35,7 +41,13 @@ const upload = multer({
   }
 });
 
-app.use(cors());
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    callback(new Error("This origin is not allowed to access the API."));
+  },
+  credentials: true
+}));
 app.use(express.json());
 app.use("/uploads", express.static(uploadDirectory));
 
@@ -191,8 +203,8 @@ app.post("/api/admin/login", (request, response) => {
   const token = createSessionToken();
   response.cookie("ods_admin_session", token, {
     httpOnly: true,
-    sameSite: "strict",
-    secure: process.env.NODE_ENV === "production",
+    sameSite: isProduction ? "none" : "strict",
+    secure: isProduction,
     maxAge: sessionDuration
   });
   response.status(204).end();
@@ -201,8 +213,8 @@ app.post("/api/admin/login", (request, response) => {
 app.post("/api/admin/logout", requireAdmin, (request, response) => {
   response.clearCookie("ods_admin_session", {
     httpOnly: true,
-    sameSite: "strict",
-    secure: process.env.NODE_ENV === "production"
+    sameSite: isProduction ? "none" : "strict",
+    secure: isProduction
   });
   response.status(204).end();
 });

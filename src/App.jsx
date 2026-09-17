@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
 import AdminPanel from "./AdminPanel.jsx";
+import { apiUrl } from "./api.js";
 import ProductPage from "./ProductPage.jsx";
 
 const categories = ["All", "Necklaces", "Chokers", "Earrings", "Waist Belts"];
@@ -46,7 +47,7 @@ function Storefront() {
         const query = new URLSearchParams();
         if (category !== "All") query.set("category", category);
         if (search.trim()) query.set("search", search.trim());
-        const response = await fetch(`/api/jewelry?${query}`, { signal: controller.signal });
+        const response = await fetch(apiUrl(`/api/jewelry?${query}`), { signal: controller.signal });
         if (!response.ok) throw new Error("Catalog unavailable");
         setItems(await response.json());
       } catch (requestError) {
@@ -67,7 +68,7 @@ function Storefront() {
   useEffect(() => {
     async function loadHeroProduct() {
       try {
-        const response = await fetch("/api/jewelry?premium=true");
+        const response = await fetch(apiUrl("/api/jewelry?premium=true"));
         if (!response.ok) throw new Error("Premium product unavailable");
         const products = await response.json();
         setHeroProduct(products[0] || null);
@@ -231,7 +232,7 @@ function EnquiryModal({ onClose, onSuccess }) {
     event.preventDefault();
     setStatus({ loading: true, message: "" });
     try {
-      const response = await fetch("/api/enquiries", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
+      const response = await fetch(apiUrl("/api/enquiries"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
       const body = await response.json();
       if (!response.ok) throw new Error(body.message);
       onClose();
@@ -288,7 +289,7 @@ export function BookingModal({ item, onClose, onSuccess }) {
     }
     setStatus({ loading: true, message: "" });
     try {
-      const response = await fetch("/api/rentals", {
+      const response = await fetch(apiUrl("/api/rentals"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, jewelryId: item._id })

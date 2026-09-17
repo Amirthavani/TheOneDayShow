@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BookingModal } from "./App.jsx";
+import { apiUrl } from "./api.js";
 
 const formatCurrency = (amount) => new Intl.NumberFormat("en-US", {
   style: "currency", currency: "USD", maximumFractionDigits: 0
@@ -19,7 +20,7 @@ export default function ProductPage({ productId }) {
   useEffect(() => {
     async function loadItem() {
       try {
-        const response = await fetch(`/api/jewelry/${productId}`);
+        const response = await fetch(apiUrl(`/api/jewelry/${productId}`));
         const product = await response.json();
         if (!response.ok) throw new Error(product.message);
         setItem(product);
@@ -34,7 +35,7 @@ export default function ProductPage({ productId }) {
   async function likeProduct() {
     if (liked) return;
     try {
-      const response = await fetch(`/api/jewelry/${productId}/like`, { method: "POST" });
+      const response = await fetch(apiUrl(`/api/jewelry/${productId}/like`), { method: "POST" });
       const result = await response.json();
       if (!response.ok) throw new Error(result.message);
       setItem((current) => ({ ...current, likes: result.likes }));
